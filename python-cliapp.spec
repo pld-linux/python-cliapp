@@ -15,7 +15,7 @@ URL:		http://liw.fi/cliapp
 BuildRequires:	python-Sphinx
 BuildRequires:	python-coverage-test-runner
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
