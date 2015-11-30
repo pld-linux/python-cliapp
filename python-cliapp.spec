@@ -6,16 +6,16 @@
 Summary:	Python framework for Unix command line programs
 Name:		python-%{module}
 Version:	1.20130808
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		Libraries/Python
 Source0:	http://ftp.debian.org/debian/pool/main/p/python-%{module}/%{name}_%{version}.orig.tar.gz
 # Source0-md5:	1ba6cab0430c4a85687b2fa48a646059
 URL:		http://liw.fi/cliapp
-BuildRequires:	python-Sphinx
 BuildRequires:	python-coverage-test-runner
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.710
+BuildRequires:	sphinx-pdg-2
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -40,13 +40,13 @@ framework for Unix command line programs.
 # CoverageTestRunner trips up on build directory
 # so need to run this before setup.py
 rm -rf build
-%{__make} check
+%{__make} -j1 check
 %endif
 
 %py_build
 
 # Build documentation
-%{__make}
+%{__make} SPHINXBUILD=sphinx-build-2
 
 %install
 rm -rf $RPM_BUILD_ROOT
