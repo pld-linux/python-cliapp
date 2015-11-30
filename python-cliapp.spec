@@ -6,7 +6,7 @@
 Summary:	Python framework for Unix command line programs
 Name:		python-%{module}
 Version:	1.20130808
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Libraries/Python
 Source0:	http://ftp.debian.org/debian/pool/main/p/python-%{module}/%{name}_%{version}.orig.tar.gz
